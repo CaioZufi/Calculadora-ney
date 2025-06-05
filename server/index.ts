@@ -1,8 +1,10 @@
+import 'dotenv/config';
 import express, { type Request, Response, NextFunction } from "express";
 import session from "express-session";
 import MemoryStore from "memorystore";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import { errorHandler } from "./middleware/errorHandler";
 
 // Tipo personalizado para a sessão
 declare module 'express-session' {
@@ -20,16 +22,20 @@ declare module 'express-session' {
 const app = express();
 const MemoryStoreSession = MemoryStore(session);
 
+if (!process.env.SESSION_SECRET) {
+  throw new Error('SESSION_SECRET must be provided');
+}
+
 // Configuração da sessão
 app.use(
   session({
-    secret: process.env.SESSION_SECRET || "ecotruck-admin-secret-key",
+    secret: process.env.SESSION_SECRET as string,
     resave: false,
     saveUninitialized: true,
     cookie: { secure: false, maxAge: 86400000 }, // 24 horas
     store: new MemoryStoreSession({
-      checkPeriod: 86400000 // 24 horas
-    })
+      checkPeriod: 86400000, // 24 horas
+    }),
   })
 );
 
@@ -69,13 +75,7 @@ app.use((req, res, next) => {
 (async () => {
   const server = await registerRoutes(app);
 
-  app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
-    const status = err.status || err.statusCode || 500;
-    const message = err.message || "Internal Server Error";
-
-    res.status(status).json({ message });
-    throw err;
-  });
+  app.use(errorHandler);
 
   // importantly only setup vite in development and after
   // setting up all the other routes so the catch-all route

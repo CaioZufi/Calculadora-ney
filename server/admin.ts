@@ -7,9 +7,9 @@ import { eq, and, gte } from "drizzle-orm/expressions";
 import { SQL } from "drizzle-orm";
 import { generateFormulasPDF, sendFormulasEmail } from "./formulas-pdf-generator";
 
-// Definir credenciais para admin (em um ambiente de produção, isso seria armazenado no banco de dados)
-const ADMIN_USER = "admin";
-const ADMIN_PASSWORD = "ecotruck2024"; // Senha em texto puro (apenas para desenvolvimento)
+// Credenciais do administrador fornecidas via variáveis de ambiente
+const ADMIN_USER = process.env.ADMIN_USER || "admin";
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "";
 
 // Middleware para verificar se o usuário está autenticado
 function isAuthenticated(req: Request, res: Response, next: NextFunction) {
@@ -113,81 +113,77 @@ export function setupAdminRoutes(app: Express) {
       
       console.log("Filtros aplicados:", { page, perPage, offset, searchTerm, dateFilter });
       
-      // Usar consulta SQL raw para garantir mapeamento correto dos campos
-      let baseQueryText = `
-        SELECT 
-          id,
-          company_name as "companyName",
-          fleet_size as "fleetSize", 
-          total_tires as "totalTires",
-          fuel_consumption as "fuelConsumption",
-          fuel_price as "fuelPrice",
-          monthly_mileage as "monthlyMileage",
-          tire_lifespan as "tireLifespan",
-          tire_price as "tirePrice",
-          retread_price as "retreadPrice",
-          tire_pressure_check as "tirePressureCheck",
-          retreading_cycles as "retreadingCycles",
-          vehicles_with_tracking as "vehiclesWithTracking",
-          tracking_cost_per_vehicle as "trackingCostPerVehicle",
-          fuel_savings_percentage as "fuelSavingsPercentage",
-          cpk_improvement_percentage as "cpkImprovementPercentage",
-          carcass_savings_percentage as "carcassSavingsPercentage",
-          r1_tire_lifespan as "r1TireLifespan",
-          r2_tire_lifespan as "r2TireLifespan",
-          fuel_savings_source as "fuelSavingsSource",
-          cpk_improvement_source as "cpkImprovementSource",
-          carcass_savings_source as "carcassSavingsSource",
-          submitted_at as "submittedAt",
-          savings_per_tire_per_month as "savingsPerTirePerMonth",
-          total_savings as "totalSavings",
-          app_user_id as "appUserId",
-          user_name as "userName"
-        FROM calculations
-      `;
+      // Definir campos que serão retornados
+      const baseQuery = {
+        id: calculations.id,
+        companyName: calculations.companyName,
+        fleetSize: calculations.fleetSize,
+        totalTires: calculations.totalTires,
+        fuelConsumption: calculations.fuelConsumption,
+        fuelPrice: calculations.fuelPrice,
+        monthlyMileage: calculations.monthlyMileage,
+        tireLifespan: calculations.tireLifespan,
+        tirePrice: calculations.tirePrice,
+        retreadPrice: calculations.retreadPrice,
+        tirePressureCheck: calculations.tirePressureCheck,
+        retreadingCycles: calculations.retreadingCycles,
+        vehiclesWithTracking: calculations.vehiclesWithTracking,
+        trackingCostPerVehicle: calculations.trackingCostPerVehicle,
+        fuelSavingsPercentage: calculations.fuelSavingsPercentage,
+        cpkImprovementPercentage: calculations.cpkImprovementPercentage,
+        carcassSavingsPercentage: calculations.carcassSavingsPercentage,
+        r1TireLifespan: calculations.r1TireLifespan,
+        r2TireLifespan: calculations.r2TireLifespan,
+        fuelSavingsSource: calculations.fuelSavingsSource,
+        cpkImprovementSource: calculations.cpkImprovementSource,
+        carcassSavingsSource: calculations.carcassSavingsSource,
+        submittedAt: calculations.submittedAt,
+        savingsPerTirePerMonth: calculations.savingsPerTirePerMonth,
+        totalSavings: calculations.totalSavings,
+        appUserId: calculations.appUserId,
+        userName: calculations.userName,
+      };
       
-      let whereConditions = [];
+      let whereConditions: SQL[] = [];
       
       // Adicionar filtro de busca
       if (searchTerm) {
-        whereConditions.push(`company_name ILIKE '%${searchTerm}%'`);
+        whereConditions.push(sql`${calculations.companyName} ILIKE ${'%' + searchTerm + '%'}`);
       }
       
       // Adicionar filtro de data
       if (dateFilter !== "all") {
         if (dateFilter === "today") {
-          whereConditions.push(`DATE(submitted_at) = DATE(NOW())`);
+          whereConditions.push(sql`DATE(${calculations.submittedAt}) = DATE(NOW())`);
         } else if (dateFilter === "week") {
-          whereConditions.push(`submitted_at::timestamp >= NOW() - INTERVAL '7 days'`);
+          whereConditions.push(sql`${calculations.submittedAt}::timestamp >= NOW() - INTERVAL '7 days'`);
         } else if (dateFilter === "month") {
-          whereConditions.push(`submitted_at::timestamp >= NOW() - INTERVAL '30 days'`);
+          whereConditions.push(sql`${calculations.submittedAt}::timestamp >= NOW() - INTERVAL '30 days'`);
         } else if (dateFilter === "year") {
-          whereConditions.push(`submitted_at::timestamp >= NOW() - INTERVAL '1 year'`);
+          whereConditions.push(sql`${calculations.submittedAt}::timestamp >= NOW() - INTERVAL '1 year'`);
         }
       }
       
-      // Construir a consulta completa
-      let fullQuery = baseQueryText;
-      
+      // Montar consulta usando o query builder evitando SQL injection
+      let query = db.select(baseQuery).from(calculations);
+
       if (whereConditions.length > 0) {
-        fullQuery += ` WHERE ${whereConditions.join(' AND ')}`;
+        const whereClause = sql.join(whereConditions, sql` AND `);
+        query = (query as any).where(whereClause);
       }
-      
-      fullQuery += ` ORDER BY submitted_at DESC LIMIT ${perPage} OFFSET ${offset}`;
-      
-      console.log("Query SQL final:", fullQuery);
-      
-      const results = await db.execute(sql.raw(fullQuery));
-      
-      // Consulta para contar total de registros
-      let countQueryText = `SELECT COUNT(*) as count FROM calculations`;
-      if (whereConditions.length > 0) {
-        countQueryText += ` WHERE ${whereConditions.join(' AND ')}`;
-      }
-      const countResult = await db.execute(sql.raw(countQueryText));
-      
-      const totalCount = parseInt((countResult.rows[0] as any)?.count || '0');
-      const calculationsData = results.rows;
+
+      const results = await query
+        .orderBy(desc(calculations.submittedAt))
+        .limit(perPage)
+        .offset(offset);
+
+      const countResult = await db
+        .select({ count: count() })
+        .from(calculations)
+        .where(whereConditions.length > 0 ? sql.join(whereConditions, sql` AND `) : sql`true`);
+
+      const totalCount = Number(countResult[0]?.count || 0);
+      const calculationsData = results as any[];
       
       // Processar os resultados para garantir que os usuários tenham nomes
       const processedResults = calculationsData.map((calc: any) => {
