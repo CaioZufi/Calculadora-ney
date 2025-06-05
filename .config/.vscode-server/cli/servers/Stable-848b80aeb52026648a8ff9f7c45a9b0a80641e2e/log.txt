@@ -1,0 +1,200 @@
+*
+* Visual Studio Code Server
+*
+* By using the software, you agree to
+* the Visual Studio Code Server License Terms (https://aka.ms/vscode-server-license) and
+* the Microsoft Privacy Statement (https://privacy.microsoft.com/en-US/privacystatement).
+*
+Server bound to /tmp/code-836c1ecc-4033-46e3-90c3-55cdbfd29596
+Extension host agent listening on /tmp/code-836c1ecc-4033-46e3-90c3-55cdbfd29596
+
+[00:32:37] 
+
+
+
+
+[00:32:37] Extension host agent started.
+[00:32:37] Started initializing default profile extensions in extensions installation folder. file:///home/runner/.vscode-server/extensions
+[00:32:37] ComputeTargetPlatform: linux-x64
+[00:32:37] Completed initializing default profile extensions in extensions installation folder. file:///home/runner/.vscode-server/extensions
+[00:32:38] [<unknown>][ab08388c][ExtensionHostConnection] New connection established.
+[00:32:38] [<unknown>][7618893e][ManagementConnection] New connection established.
+[00:32:38] [<unknown>][ab08388c][ExtensionHostConnection] <582> Launched Extension Host Process.
+[00:32:40] ComputeTargetPlatform: linux-x64
+[00:32:40] Getting Manifest... github.copilot-chat
+[00:32:40] Getting Manifest... github.copilot
+[00:32:40] Installing extension: github.copilot {
+  installPreReleaseVersion: false,
+  donotIncludePackAndDependencies: true,
+  donotVerifySignature: false,
+  context: { clientTargetPlatform: 'darwin-arm64' },
+  isApplicationScoped: false,
+  profileLocation: _r {
+    scheme: 'file',
+    authority: '',
+    path: '/home/runner/.vscode-server/extensions/extensions.json',
+    query: '',
+    fragment: '',
+    _formatted: 'file:///home/runner/.vscode-server/extensions/extensions.json',
+    _fsPath: '/home/runner/.vscode-server/extensions/extensions.json'
+  },
+  productVersion: { version: '1.100.2', date: '2025-05-14T21:47:40.416Z' }
+}
+[00:32:40] Installing the extension without checking dependencies and pack github.copilot
+[00:32:40] Installing extension: github.copilot-chat {
+  installPreReleaseVersion: false,
+  donotIncludePackAndDependencies: true,
+  donotVerifySignature: false,
+  context: { clientTargetPlatform: 'darwin-arm64' },
+  isApplicationScoped: false,
+  profileLocation: _r {
+    scheme: 'file',
+    authority: '',
+    path: '/home/runner/.vscode-server/extensions/extensions.json',
+    query: '',
+    fragment: '',
+    _formatted: 'file:///home/runner/.vscode-server/extensions/extensions.json',
+    _fsPath: '/home/runner/.vscode-server/extensions/extensions.json'
+  },
+  productVersion: { version: '1.100.2', date: '2025-05-14T21:47:40.416Z' }
+}
+[00:32:40] Installing the extension without checking dependencies and pack github.copilot-chat
+[00:32:42] Extension signature verification result for github.copilot-chat: Success. Internal Code: 0. Executed: true. Duration: 1371ms.
+[00:32:42] Extension signature verification result for github.copilot: Success. Internal Code: 0. Executed: true. Duration: 1487ms.
+[00:32:43] Extracted extension to file:///home/runner/.vscode-server/extensions/github.copilot-chat-0.27.2: github.copilot-chat
+[00:32:43] Renamed to /home/runner/.vscode-server/extensions/github.copilot-chat-0.27.2
+[00:32:43] Extension installed successfully: github.copilot-chat file:///home/runner/.vscode-server/extensions/extensions.json
+[00:32:44] Extracted extension to file:///home/runner/.vscode-server/extensions/github.copilot-1.326.0: github.copilot
+[00:32:44] Renamed to /home/runner/.vscode-server/extensions/github.copilot-1.326.0
+[00:32:44] Extension installed successfully: github.copilot file:///home/runner/.vscode-server/extensions/extensions.json
+[00:33:49] [<unknown>][7618893e][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[00:33:49] [<unknown>][ab08388c][ExtensionHostConnection] <582> Extension Host Process exited with code: 0, signal: null.
+Cancelling previous shutdown timeout
+[00:33:49] Cancelling previous shutdown timeout
+Last EH closed, waiting before shutting down
+[00:33:49] Last EH closed, waiting before shutting down
+[00:33:51] [<unknown>][30f9b20a][ExtensionHostConnection] New connection established.
+[00:33:51] [<unknown>][e679fb4d][ManagementConnection] New connection established.
+[00:33:51] [<unknown>][30f9b20a][ExtensionHostConnection] <896> Launched Extension Host Process.
+rejected promise not handled within 1 second: CodeExpectedError: Could not find pty 5 on pty host
+stack trace: CodeExpectedError: Could not find pty 5 on pty host
+    at I.W (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:46:6392)
+    at I.orphanQuestionReply (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:46:3274)
+    at s.<computed> (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:45:2962)
+    at Object.call (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:28:4204)
+    at ul.s (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:81207)
+    at ul.q (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80730)
+    at ps.value (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80132)
+    at C.B (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2373)
+    at C.fire (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2591)
+    at process.x (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:24:29911)
+    at process.emit (node:events:524:28)
+    at emit (node:internal/child_process:950:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+[00:33:54] Error [CodeExpectedError]: Could not find pty 5 on pty host
+    at I.W (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:46:6392)
+    at I.orphanQuestionReply (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:46:3274)
+    at s.<computed> (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:45:2962)
+    at Object.call (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:28:4204)
+    at ul.s (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:81207)
+    at ul.q (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80730)
+    at ps.value (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80132)
+    at C.B (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2373)
+    at C.fire (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2591)
+    at process.x (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:24:29911)
+    at process.emit (node:events:524:28)
+    at emit (node:internal/child_process:950:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+rejected promise not handled within 1 second: CodeExpectedError: Could not find pty 6 on pty host
+stack trace: CodeExpectedError: Could not find pty 6 on pty host
+    at I.W (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:46:6392)
+    at I.orphanQuestionReply (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:46:3274)
+    at s.<computed> (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:45:2962)
+    at Object.call (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:28:4204)
+    at ul.s (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:81207)
+    at ul.q (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80730)
+    at ps.value (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80132)
+    at C.B (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2373)
+    at C.fire (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2591)
+    at process.x (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:24:29911)
+    at process.emit (node:events:524:28)
+    at emit (node:internal/child_process:950:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+[00:33:54] Error [CodeExpectedError]: Could not find pty 6 on pty host
+    at I.W (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:46:6392)
+    at I.orphanQuestionReply (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:46:3274)
+    at s.<computed> (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:45:2962)
+    at Object.call (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:28:4204)
+    at ul.s (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:81207)
+    at ul.q (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80730)
+    at ps.value (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80132)
+    at C.B (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2373)
+    at C.fire (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2591)
+    at process.x (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:24:29911)
+    at process.emit (node:events:524:28)
+    at emit (node:internal/child_process:950:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+rejected promise not handled within 1 second: CodeExpectedError: Could not find pty 7 on pty host
+stack trace: CodeExpectedError: Could not find pty 7 on pty host
+    at I.W (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:46:6392)
+    at I.orphanQuestionReply (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:46:3274)
+    at s.<computed> (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:45:2962)
+    at Object.call (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:28:4204)
+    at ul.s (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:81207)
+    at ul.q (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80730)
+    at ps.value (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80132)
+    at C.B (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2373)
+    at C.fire (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2591)
+    at process.x (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:24:29911)
+    at process.emit (node:events:524:28)
+    at emit (node:internal/child_process:950:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+[00:33:54] Error [CodeExpectedError]: Could not find pty 7 on pty host
+    at I.W (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:46:6392)
+    at I.orphanQuestionReply (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:46:3274)
+    at s.<computed> (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:45:2962)
+    at Object.call (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:28:4204)
+    at ul.s (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:81207)
+    at ul.q (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80730)
+    at ps.value (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80132)
+    at C.B (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2373)
+    at C.fire (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2591)
+    at process.x (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:24:29911)
+    at process.emit (node:events:524:28)
+    at emit (node:internal/child_process:950:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+rejected promise not handled within 1 second: CodeExpectedError: Could not find pty 8 on pty host
+stack trace: CodeExpectedError: Could not find pty 8 on pty host
+    at I.W (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:46:6392)
+    at I.orphanQuestionReply (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:46:3274)
+    at s.<computed> (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:45:2962)
+    at Object.call (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:28:4204)
+    at ul.s (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:81207)
+    at ul.q (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80730)
+    at ps.value (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80132)
+    at C.B (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2373)
+    at C.fire (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2591)
+    at process.x (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:24:29911)
+    at process.emit (node:events:524:28)
+    at emit (node:internal/child_process:950:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+[00:33:54] Error [CodeExpectedError]: Could not find pty 8 on pty host
+    at I.W (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:46:6392)
+    at I.orphanQuestionReply (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:46:3274)
+    at s.<computed> (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:45:2962)
+    at Object.call (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:28:4204)
+    at ul.s (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:81207)
+    at ul.q (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80730)
+    at ps.value (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:80132)
+    at C.B (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2373)
+    at C.fire (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:26:2591)
+    at process.x (file:///home/runner/workspace/.config/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/server/out/vs/platform/terminal/node/ptyHostMain.js:24:29911)
+    at process.emit (node:events:524:28)
+    at emit (node:internal/child_process:950:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:83:21)
+[00:33:55] [<unknown>][e679fb4d][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[00:33:55] [<unknown>][30f9b20a][ExtensionHostConnection] <896> Extension Host Process exited with code: 0, signal: null.
+Cancelling previous shutdown timeout
+[00:33:55] Cancelling previous shutdown timeout
+Last EH closed, waiting before shutting down
+[00:33:55] Last EH closed, waiting before shutting down

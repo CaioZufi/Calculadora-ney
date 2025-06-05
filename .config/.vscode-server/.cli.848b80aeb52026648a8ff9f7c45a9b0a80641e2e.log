@@ -1,0 +1,11 @@
+Listening on 127.0.0.1:42887
+[2025-06-01 00:32:33] info Disposed of connection to running server.
+[2025-06-01 00:32:33] info Checking /home/runner/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/log.txt and /home/runner/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/pid.txt for a running server...
+[2025-06-01 00:32:33] info Downloading Visual Studio Code server -> /tmp/.tmpgnScIa/vscode-server-linux-x64.tar.gz
+[2025-06-01 00:32:37] info Starting server...
+[2025-06-01 00:32:37] info Server started
+[2025-06-01 00:33:49] info Disposed of connection to running server.
+[2025-06-01 00:33:50] info Disposed of connection to running server.
+[2025-06-01 00:33:51] info Checking /home/runner/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/log.txt and /home/runner/.vscode-server/cli/servers/Stable-848b80aeb52026648a8ff9f7c45a9b0a80641e2e/pid.txt for a running server...
+[2025-06-01 00:33:51] info Found running server (pid=549)
+[2025-06-01 00:33:55] info Disposed of connection to running server.

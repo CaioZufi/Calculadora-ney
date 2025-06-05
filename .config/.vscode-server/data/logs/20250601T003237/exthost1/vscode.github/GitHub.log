@@ -1,0 +1,3 @@
+2025-06-01 00:32:43.817 [info] Log level: Info
+2025-06-01 00:32:44.140 [warning] [GitHubBranchProtectionProvider][updateRepositoryBranchProtection] Failed to update repository branch protection: No GitHub authentication session available.
+2025-06-01 00:33:29.295 [warning] [GitHubSourceControlHistoryItemDetailsProvider][_loadAssignableUsers] Failed to load assignable user(s) for Neypjr/ecotruck-simulacao: Error: No GitHub authentication session available.
