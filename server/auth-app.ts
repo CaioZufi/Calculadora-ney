@@ -28,12 +28,6 @@ export async function comparePasswords(supplied: string, stored: string) {
     return timingSafeEqual(hashedBuf, suppliedBuf);
 }
 
-export function isAppAuthenticated(req: Request, res: Response, next: NextFunction) {
-    if (!req.session.appUserId) {
-        return res.status(401).json({ message: "Não autenticado" });
-    }
-    next();
-}
 
 export function setupAppAuth(app: Express) {
     // Endpoint para criar usuários (somente admin pode acessar)
