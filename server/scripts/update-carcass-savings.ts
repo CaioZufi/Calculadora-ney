@@ -3,7 +3,7 @@
  * Este script corrige os valores antigos (33%) para o novo padrão (10%)
  */
 
-import { db } from './db';
+import { db } from '../db';
 import { calculations } from '@shared/schema';
 import { eq } from 'drizzle-orm';
 

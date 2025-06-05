@@ -1,4 +1,4 @@
-import { pool } from "./db";
+import { pool } from "../db";
 
 /**
  * Script para adicionar colunas de fontes de informação ao banco de dados
